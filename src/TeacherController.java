@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class TeacherController implements UserController<Teacher> {
+public class TeacherController implements CreateableUser<Teacher>, EditableUser<Teacher> {
 
     private TeacherService teacherService;
     private UserComparator<Teacher> userComparator;
@@ -17,7 +17,8 @@ public class TeacherController implements UserController<Teacher> {
         teacherService.createTeacher(firstName, lastName, middleName);
     }
 
-    public void editTeacher(int index, String firstName, String lastName, String middleName) {
+    @Override
+    public void edit(int index, String firstName, String lastName, String middleName) {
         teacherService.editTeacher(index, firstName, lastName, middleName);
     }
 

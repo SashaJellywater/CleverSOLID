@@ -1,8 +1,5 @@
-public class Teacher extends User implements Comparable<Teacher>{
+public class Teacher extends User implements ComparableUser {
     private Long teacherId;
-    private String firstName;
-    private String lastName;
-    private  String middleName;
 
     public Teacher(String firstName, String lastName, String middleName) {
         super(firstName, lastName, middleName);
@@ -17,8 +14,8 @@ public class Teacher extends User implements Comparable<Teacher>{
     }
 
     @Override
-    public int compareTo(Teacher o) {
-        return this.teacherId.compareTo(o.teacherId);
+    public int compareTo(User o) {
+        return this.teacherId.compareTo(((Teacher) o).getTeacherId());
     }
 }
 

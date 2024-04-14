@@ -1,3 +1,3 @@
-public interface UserController <T extends User>{
+public interface CreateableUser<T extends User> {
     void create(String firstName, String lastName, String middleName);
 }
